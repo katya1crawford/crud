@@ -1,0 +1,203 @@
+<!-- <button class="btn btn-lg btn-outline-primary">Create New Employee</button> -->
+
+<!--
+<ng-template #mymodal let-modal>
+  <div class="modal-header"> -->
+<form [formGroup]="employeeForm" (ngSubmit)='onSubmit()'>
+  <div class="mb-3 row">
+
+    <div class="header">{{pageTitle}}</div>
+    <div class="form-group" [class.has-error]="employeeForm.controls.name.invalid && employeeForm.controls.name.touched">
+      <label for="name" class="col-sm-2 col-form-label">Name</label>
+      <input required id="name" class="form-control" name="name" [formControl]="employeeForm.controls.name" formControlName='name' type="text">
+      <div *ngIf="employeeForm.controls.name.invalid && (employeeForm.controls.name.dirty || employeeForm.controls.name.touched)">
+
+        <div class="help-text" *ngIf="employeeForm.controls.name.errors?.required">
+          *Name is required.
+        </div>
+        <div class="help-text" *ngIf="employeeForm.controls.name.errors?.minlength">
+          *Name must be at least 4 characters long.
+        </div>
+        <div class="help-text" *ngIf="employeeForm.controls.name.errors?.maxlength">
+          *Name must not exceed 10 characters.
+        </div>
+        <div class="help-text" *ngIf="employeeForm.controls.name.errors?.employeeNameExist">
+          *This name is taken.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-group" [class.has-error]="employeeForm.controls.email.invalid && employeeForm.controls.email.touched">
+      <label for="email" class="col-sm-2 col-form-label">Email</label>
+      <input id="email" required [formControl]="employeeForm.controls.email" class="form-control">
+      <div *ngIf="employeeForm.controls.email.invalid && (employeeForm.controls.email.dirty || employeeForm.controls.email.touched)">
+
+        <div class="help-text" *ngIf="employeeForm.controls.email.errors?.required">
+          Email is required.
+        </div>
+
+        <div class="help-text" *ngIf="employeeForm.controls.email.errors?.pattern">
+          Must use domain @random.com
+        </div>
+
+        <div class="help-text" *ngIf="employeeForm.controls.email.errors?.employeeEmailExist">
+          This email is taken.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" [class.has-error]="employeeForm.controls.phoneNumber.invalid && employeeForm.controls.phoneNumber.touched">
+      <label for="phoneNumber" class="control-label">Phone Number</label>
+      <input id="phoneNumber" [formControl]="employeeForm.controls.phoneNumber" name="phoneNumber" formControlName='phoneNumber' type="tel" class="form-control">
+
+      <div class="help-text"
+        *ngIf="employeeForm.controls.phoneNumber.invalid && (employeeForm.controls.phoneNumber.dirty || employeeForm.controls.phoneNumber.touched)">
+
+        <div class="help-text" *ngIf="employeeForm.controls.phoneNumber.errors?.required">
+          *Phone number is required.
+        </div>
+
+        <div class="help-text" *ngIf="employeeForm.controls.phoneNumber.errors?.minlength">
+          *Phone number must be between 10 and 14 characters long.
+        </div>
+        <div class="help-text" *ngIf="employeeForm.controls.phoneNumber.errors?.maxlength">
+          *Phone number must be between 10 and 14 characters long.
+        </div>
+        <div class="help-text" *ngIf="employeeForm.controls.phoneNumber.errors?.pattern">
+          *Please use pattern (123)555-0000
+        </div>
+
+        <div class="help-text" *ngIf="employeeForm.controls.phoneNumber.errors?.employeePhoneNumberExist">
+          *This phone number is taken.
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="form-group" [class.has-error]="employeeForm.controls.contactPreference.touched && employeeForm.controls.contactPreference.invalid">
+      <label class="col-sm-2 col-form-label">Contact Preference</label>
+      <div class="form-control">
+        <label class="col-sm-2 col-form-label">
+          <input type="radio" [formControl]="employeeForm.controls.contactPreference" required name="contactPreference" formControlName="contactPreference"
+            value="email"> Email
+        </label>
+        <label class="col-sm-2 col-form-label">
+          <input type="radio" required name="contactPreference" formControlName="contactPreference" value="phone"> Phone
+        </label>
+      </div>
+      <span class="help-block" *ngIf="employeeForm.controls.contactPreference.touched && employeeForm.controls.contactPreference.invalid">
+        Contact Preference is required
+      </span>
+    </div>
+
+    <div class="form-group" [class.has-error]="employeeForm.controls.gender.touched && employeeForm.controls.gender.invalid">
+      <label class="col-sm-2 col-form-label">Gender</label>
+      <div class="form-control">
+        <label class="radio-inline">
+          <input type="radio" value="male" name="gender" [formControl]="employeeForm.controls.gender" formControlName="gender"> Male
+        </label>
+        <label class="radio-inline" class="col-sm-2 col-form-label">
+          <input type="radio" value="female" name="gender" formControlName="gender"> Female
+        </label>
+      </div>
+      <span class="help-block" *ngIf="employeeForm.controls.gender.touched && employeeForm.controls.gender.invalid">
+        Gender is required
+      </span>
+    </div>
+
+
+
+    <div class="form-group" [class.has-error]="employeeForm.controls.department.touched && employeeForm.controls.department.invalid">
+      <label for="department" class="col-sm-2 col-form-label">
+        Department
+      </label>
+      <select id="department" appSelectValidator="select" name="department" [formControl]="employeeForm.controls.department" formControlName="department"
+        class="form-control">
+        <option value="select">Select Department</option>
+        <option *ngFor="let dept of departments" [value]="dept">
+          {{dept}}
+        </option>
+      </select>
+      <span class="help-block" *ngIf="employeeForm.controls.department.touched && employeeForm.controls.department.invalid">
+        Department is required
+      </span>
+    </div>
+
+    <div class="form-group datePicker">
+      <label for="dateOfBirth" class="col-sm-2 col-form-label">Date of Birth</label>
+      <input id="dateOfBirth" [formControl]="employeeForm.controls.dateOfBirth" type="text" class="form-control" bsDatepicker name="dateOfBirth"
+        formControlName='dateOfBirth' placement="right">
+    </div>
+
+
+    <button class="btn btn-primary" type="button" (click)="addSkillBtn()">Add Skill</button>
+    <div formArrayName="skills" *ngFor="let skill of employeeForm.get('skills')['controls'];let i=index" class="array">
+
+      <table>
+        <div class="skill-container">
+          <tr>
+            <td>
+              <div>
+                <button type="button" id="deleteSkill" (click)="removeSkill(i)">X</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <div [formGroupName]="i">
+              <div class="form-group ">
+                <td> <label [attr.for]='"skillName"+i'>Skill:</label></td>
+                <td> <input type="text" [id]='"skillName"+i' class="form-control" formControlName="skillName" placement="right"></td>
+
+              </div>
+            </div>
+          </tr>
+          <tr>
+            <div [formGroupName]="i">
+              <div class="form-group array">
+                <td> <label [attr.for]='"proficiency"+i'>Proficiency:</label></td>
+                <td><input type="radio" [id]='"proficiency"+i' value="beginner" formControlName="proficiency" placement="right">Beginner</td>
+                <td><input type="radio" [id]='"proficiency"+i' value="advanced" formControlName="proficiency" placement="right">Advanced</td>
+              </div>
+            </div>
+          </tr>
+
+          <tr>
+            <div [formGroupName]="i">
+              <div class="form-group array">
+                <td><label [attr.for]='"experience"+i'>Experience in years:</label></td>
+                <td> <input type="text" [id]='"experience"+i' class="form-control" formControlName="experienceInYears" placement="right"></td>
+              </div>
+            </div>
+          </tr>
+
+        </div>
+      </table>
+    </div>
+    <!-- <div class="form-group">
+        <label for="photoPath">Photo Path</label>
+        <input id="photoPath" name="photoPath" formControlName='photoPath' type="text" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <button type="button" (click)="togglePhotoPreview()" class="btn btn-primary">
+          {{previewPhoto? "Hide ": "Show "}} Preview
+        </button>
+      </div>
+
+      <div class="form-group">
+        <img [src]="employee.photoPath" height="200" width="200" />
+      </div> -->
+
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary" [disabled]="employeeForm.invalid">Save</button>
+    </div>
+    <!-- <div class="card-footer">
+        <button type="button" class="btn btn-primary" (click)="sendMessage(employeeForm.value)" [disabled]="employeeForm.invalid"><a
+            routerLink="review">Preview</a></button>
+      </div> -->
+  </div>
+</form>
+<!-- </div>
+</ng-template> -->

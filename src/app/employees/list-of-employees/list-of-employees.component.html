@@ -1,0 +1,34 @@
+<table class="table">
+  <!-- <thead>
+    <tr>
+      <th scope="col"><img [src]="employee.photoPath" alt="">
+      </th>
+    </tr>
+  </thead> -->
+  <tbody>
+    <tr>
+      <th class="table-primary" scope="row">Name</th>
+      <td class="table-primary" style="font-weight: 600;">DOB</td>
+      <td class="table-primary" style="font-weight: 600;">Gender</td>
+      <td class="table-primary" style="font-weight: 600;">Phone #</td>
+      <td class="table-primary" style="font-weight: 600;">Email</td>
+      <td class="table-primary" style="font-weight: 600;">Department</td>
+      <td class="table-primary"></td>
+    </tr>
+    <tr *ngFor="let employee of employees">
+
+      <th class="table-primary" scope="row">{{employee.name}}</th>
+      <td class="table-primary">{{employee.dateOfBirth |date}}</td>
+      <td class="table-primary">{{employee.gender}}</td>
+      <td class="table-primary">{{employee.phoneNumber}}</td>
+      <td class="table-primary">{{employee.email}}</td>
+      <td class="table-primary">{{employee.department}}</td>
+      <td class="table-primary"> <button type="button" (click)="onEdit(employee.id)">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <button class="btn btn-primary" (click)='addNew()'>+ Add New Employee</button>
+</div>

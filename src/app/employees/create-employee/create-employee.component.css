@@ -1,0 +1,56 @@
+.form-control {
+  display: inline-block;
+  margin: 1%;
+}
+
+.form-group {
+  border: none;
+}
+.header {
+  background-color: darkblue;
+  color: white;
+  margin: 2%;
+}
+
+.array {
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+  margin: 1% 5%;
+}
+
+input[type="radio"] {
+  padding: 5%;
+}
+.well {
+  background-color: grey;
+}
+
+.datePicker {
+  position: relative;
+}
+.datePicker #dateOfBirth {
+  top: -245px !important;
+}
+.has-error input {
+  background-color: #fce4e4;
+  border: 1px solid #cc0033;
+  outline: none;
+}
+.help-text {
+  color: #cc0033;
+  text-align: left;
+  font-size: 0.75rem;
+}
+
+#deleteSkill {
+  background-color: #cc0033;
+  margin-left: 350px;
+  color: #fce4e4;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: #fce4e4 2px;
+}
+td {
+  padding: 1% 7%;
+}

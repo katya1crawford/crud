@@ -1,0 +1,209 @@
+{
+  "employees": [
+    {
+      "id": 23,
+      "name": "Alan MAll",
+      "gender": "male",
+      "email": "alan@random.com",
+      "phoneNumber": 6175489785,
+      "contactPreference": "phone",
+      "dateOfBirth": "3 / 25 / 1987",
+      "department": "IT",
+      "isActive": true,
+      "photoPath": "https://www.fairphone.com/wp-content/uploads/2017/10/Remco-200x200.jpg",
+      "skills": [
+        {
+          "skillName": "C#",
+          "proficiency": "beginner",
+          "experienceInYears": 10
+        },
+        {
+          "skillName": "Angular",
+          "proficiency": "beginner",
+          "experienceInYears": 1
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Baboo M",
+      "gender": "male",
+      "email": "babee@random.com",
+      "phoneNumber": 80275489785,
+      "contactPreference": "email",
+      "dateOfBirth": "4 / 5 / 1987",
+      "department": "Sales",
+      "isActive": true,
+      "photoPath": "https://www.camc.org/sites/default/files/styles/800x600/public/2020-09/employee%20wellness%20center_hero.jpg?itok=9qCcPtUE",
+      "skills": [
+        {
+          "skillName": "Javscript",
+          "proficiency": "advanced",
+          "experienceInYears": "10"
+        },
+        {
+          "skillName": "HTML/CSS",
+          "proficiency": "advanced",
+          "experienceInYears": "15"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Ken B",
+      "gender": "male",
+      "email": "ken@random.com",
+      "phoneNumber": 6179999785,
+      "contactPreference": "email",
+      "dateOfBirth": "2 / 15 / 1977",
+      "department": "Sales",
+      "isActive": true,
+      "photoPath": "https://assets-global.website-files.com/5ff621612284ed73d44c11f3/5ff621612284ed459c4c1797_5f19e3291ddcdf9c5eea3d78_zach-head-shot.jpeg",
+      "skills": [
+        {
+          "skillName": "Cold Sales",
+          "experienceInYears": 10,
+          "proficiency": "advanced"
+        },
+        {
+          "skillName": "SMM Social network sales",
+          "experienceInYears": 1,
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Marta Bulk",
+      "gender": "female",
+      "email": "marta@gmail.com",
+      "phoneNumber": 9856699785,
+      "contactPreference": "email",
+      "dateOfBirth": "2 / 22 / 1990",
+      "department": "Marketing",
+      "isActive": true,
+      "photoPath": "",
+      "skills": [
+        {
+          "skillName": "Online Sales",
+          "experienceInYears": 9,
+          "proficiency": "advanced"
+        },
+        {
+          "skillName": "SMM network",
+          "experienceInYears": 2,
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 98,
+      "name": "Mike Nike",
+      "gender": "male",
+      "email": "mmm@gmail.com",
+      "phoneNumber": 6178887459,
+      "contactPreference": "phone",
+      "dateOfBirth": "3 / 10 / 1985",
+      "department": "IT",
+      "isActive": true,
+      "photoPath": "https://assets-global.website-files.com/5ff621612284ed73d44c11f3/5ff621612284ed459c4c1797_5f19e3291ddcdf9c5eea3d78_zach-head-shot.jpeg",
+      "skills": [
+        {
+          "skillName": "React",
+          "experienceInYears": 10,
+          "proficiency": "advanced"
+        },
+        {
+          "skillName": "Javascript",
+          "experienceInYears": 1,
+          "proficiency": "beginner"
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "name": "baba tonya",
+      "contactPreference": "email",
+      "email": "bt@yandex.com",
+      "skills": [
+        {
+          "skillName": "street veggie sales",
+          "proficiency": "advanced",
+          "experienceInYears": "45"
+        }
+      ],
+      "gender": "male",
+      "phoneNumber": "12154564646",
+      "department": "Sales",
+      "dateOfBirth": "1939-06-22T05:00:00.000Z"
+    },
+    {
+      "id": 100,
+      "name": "bansas",
+      "contactPreference": "phone",
+      "email": "basnmbd@yandex.com",
+      "skills": [
+        {
+          "skillName": "PHP",
+          "proficiency": "advanced",
+          "experienceInYears": ""
+        }
+      ],
+      "gender": "female",
+      "phoneNumber": "645646546",
+      "department": "IT",
+      "dateOfBirth": "02/20/1955"
+    },
+    {
+      "id": 101,
+      "name": "Asan",
+      "contactPreference": "phone",
+      "email": "mas@yandex.com",
+      "skills": [
+        {
+          "skillName": "C#",
+          "proficiency": "advanced",
+          "experienceInYears": "15"
+        }
+      ],
+      "gender": "male",
+      "phoneNumber": "45646",
+      "department": "IT",
+      "dateOfBirth": "10/18/1987"
+    },
+    {
+      "id": 102,
+      "name": "asd",
+      "contactPreference": "phone",
+      "email": "faaaaa@yandex.com",
+      "skills": [
+        {
+          "skillName": "lwr;lw",
+          "proficiency": "beginner",
+          "experienceInYears": "rewqr"
+        }
+      ],
+      "gender": "female",
+      "phoneNumber": "45454554",
+      "department": "IT",
+      "dateOfBirth": "2021-09-06T00:36:28.718Z"
+    },
+    {
+      "id": 103,
+      "name": "Mart",
+      "contactPreference": "phone",
+      "email": "ken@random.com",
+      "skills": [
+        {
+          "skillName": "",
+          "proficiency": "",
+          "experienceInYears": ""
+        }
+      ],
+      "gender": "female",
+      "phoneNumber": "6446864",
+      "department": "select",
+      "dateOfBirth": "1988-09-05T05:00:00.000Z"
+    }
+  ]
+}
